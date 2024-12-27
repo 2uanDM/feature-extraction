@@ -6,12 +6,11 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from src.dataset import CUHK03Dataset
+from src.model import ReIDSiamese
 from torch.utils.data import DataLoader, random_split
 from torchvision import transforms
 from tqdm import tqdm
-
-from src.dataset import CUHK03Dataset
-from src.model import ReIDSiamese
 
 
 def read_data(dataset_path):
@@ -112,4 +111,5 @@ if __name__ == "__main__":
         args.num_epochs,
         args.batch_size,
         args.num_workers,
+        args.lr,
     )
